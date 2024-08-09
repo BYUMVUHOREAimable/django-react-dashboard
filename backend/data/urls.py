@@ -7,4 +7,6 @@ router = DefaultRouter()
 router.register('supermarketsales',SuperMarketSalesViewset, basename='supermarketsales')
 router.register('branchedata',BrancheDataViewset, basename='branchedata')
 router.register('genderdata',GenderDataViewset, basename='genderdata')
+router.register('productbranchedata',ProductBrancheViewset, basename='productbranchedata')
+
 urlpatterns = router.urls

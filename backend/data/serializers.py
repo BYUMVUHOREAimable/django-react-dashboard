@@ -38,3 +38,21 @@ class GenderDataSerializer(serializers.Serializer):
     id = serializers.IntegerField(source='gender')
     label = serializers.CharField(source= 'gender__name')
     value = serializers.IntegerField(source='quantity')
+
+
+class ProductBrancheDataSerializer(serializers.Serializer): 
+    productline__name = serializers.CharField()
+    quantityBrancheA = serializers.IntegerField()
+    quantityBrancheB = serializers.IntegerField()
+    quantityBrancheC = serializers.IntegerField()
+
+
+
+class CountryDataSerializer(serializers.Serializer): 
+    country__name = serializers.CharField()
+    date = serializers.DateField()
+    quantity = serializers.IntegerField()
+   
+
+
+
