@@ -8,5 +8,6 @@ router.register('supermarketsales',SuperMarketSalesViewset, basename='supermarke
 router.register('branchedata',BrancheDataViewset, basename='branchedata')
 router.register('genderdata',GenderDataViewset, basename='genderdata')
 router.register('productbranchedata',ProductBrancheViewset, basename='productbranchedata')
+router.register('countrydata',CountryDataViewet, basename='countrydata')
 
 urlpatterns = router.urls
