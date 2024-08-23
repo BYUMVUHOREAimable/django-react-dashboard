@@ -10,6 +10,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import MyChartBox2 from './charts/ChartBox2';
 import MyLineChart from './charts/LineChart';
 import PublicIcon from '@mui/icons-material/Public';
+import MyCombiChart from './charts/CombiChart';
 
 const Dashboard1 = () => {
 
@@ -18,7 +19,7 @@ const Dashboard1 = () => {
     const [MyProductBrancheData, setMyProductBrancheData] = useState([])
     const [myCountryData, setMyCountryData] = useState([])
 
-    console.log("My Data", myCountryData)
+    console.log("My Productbranche Data", MyProductBrancheData)
 
     const GetData = () =>{
         AxiosInstance.get(`branchedata/`)
@@ -59,6 +60,13 @@ const Dashboard1 = () => {
           { dataKey: 'quantityGermany', label: 'Germany'}, 
           { dataKey: 'quantityFrance', label: 'France'}, 
         ]
+    
+    const myproductbrancheseries = 
+        [
+          { dataKey: 'quantityBrancheA', label: 'Quantity Branche A', type: 'bar'}, 
+          { dataKey: 'quantityBrancheB', label: 'Quantity Branche B', type: 'line'}, 
+          { dataKey: 'quantityBrancheC', label: 'Quantity Branche C', type: 'line'}, 
+        ]
         
 
 
@@ -97,6 +105,14 @@ const Dashboard1 = () => {
                             myxaxis={"month_name"}
                             myseries ={mycountryseries}
                              />}
+
+                icon2 = {<PublicIcon/>}
+                title2 = {"Quantities per Product Line per Branch"}
+                chart2={ <MyCombiChart
+                            data={MyProductBrancheData}
+                            myseries = {myproductbrancheseries}
+                            xcolumn = {'productline__name'}
+                        />}
 
             />
 
